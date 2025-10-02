@@ -1,0 +1,76 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",                          // Compile to modern JavaScript (supports async/await, classes, etc.)
+    "lib": ["ES2022"],                           // Include ES2022 standard library (Array.at(), Object.hasOwn(), etc.)
+    
+    /* Modules */
+    "module": "commonjs",                        // Use CommonJS modules (require/module.exports) - Node.js standard
+    "rootDir": "./src",                          // All TypeScript source files are in ./src
+    "moduleResolution": "node",                  // Resolve modules like Node.js does (node_modules, package.json)
+    "baseUrl": "./",                             // Base directory for resolving non-relative imports
+    "paths": {                                   // Path aliases for cleaner imports
+      "@/*": ["src/*"],                          // Example: import { User } from '@/models/User'
+      "@config/*": ["src/config/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@middleware/*": ["src/middleware/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"],
+      "@types/*": ["src/types/*"]
+    },
+    "resolveJsonModule": true,                   // Allow importing .json files (import data from './config.json')
+    
+    /* Emit */
+    "outDir": "./dist",                          // Compiled JavaScript goes to ./dist folder
+    "sourceMap": true,                           // Generate .map files for debugging (maps JS back to TS in stack traces)
+    "removeComments": true,                      // Remove comments from compiled JS (smaller file size)
+    "declaration": true,                         // Generate .d.ts type declaration files
+    "declarationMap": true,                      // Generate source maps for .d.ts files
+    
+    /* Interop Constraints */
+    "esModuleInterop": true,                     // Allow default imports from CommonJS modules (import express from 'express')
+    "allowSyntheticDefaultImports": true,        // Allow 'import x from y' when module doesn't have default export
+    "forceConsistentCasingInFileNames": true,    // Enforce consistent file name casing (important for Linux/Mac)
+    "isolatedModules": true,                     // Ensure each file can be transpiled independently (needed for ts-node)
+    
+    /* Type Checking */
+    "strict": true,                              // Enable ALL strict type-checking options
+    "noImplicitAny": true,                       // Error on expressions with implied 'any' type
+    "strictNullChecks": true,                    // null and undefined are NOT assignable to other types
+    "strictFunctionTypes": true,                 // Function parameters are checked more strictly
+    "strictBindCallApply": true,                 // Check bind/call/apply arguments match function signature
+    "strictPropertyInitialization": true,        // Class properties must be initialized in constructor
+    "noImplicitThis": true,                      // Error when 'this' has type 'any'
+    "alwaysStrict": true,                        // Use 'use strict' in all files
+    
+    /* Additional Checks */
+    "noUnusedLocals": true,                      // Error on unused local variables
+    "noUnusedParameters": true,                  // Error on unused function parameters
+    "noImplicitReturns": true,                   // Error if not all code paths return a value
+    "noFallthroughCasesInSwitch": true,          // Error on fallthrough cases in switch statements
+    "noUncheckedIndexedAccess": false,           // Don't force undefined checks on array access (can be annoying)
+    
+    /* Completeness */
+    "skipLibCheck": true                         // Skip type checking of declaration files (faster compilation)
+  },
+  
+  /* Files to Include/Exclude */
+  "include": [
+    "src/**/*"                                   // Include all files in src directory
+  ],
+  "exclude": [
+    "node_modules",                              // Don't compile dependencies
+    "dist",                                      // Don't compile output
+    "tests",                                     // Don't compile test files (Jest handles them)
+    "**/*.spec.ts",                              // Exclude test files
+    "**/*.test.ts"
+  ],
+  
+  /* ts-node Configuration (for running TypeScript directly) */
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],      // Enable path aliases in ts-node
+    "transpileOnly": true,                       // Skip type checking when running (faster startup)
+    "files": true
+  }
+}
+

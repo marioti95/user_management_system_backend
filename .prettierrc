@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  
+  "semi": true,
+  "Comment": "Require semicolons at end of statements (personal preference, can be false)",
+  
+  "singleQuote": true,
+  "Comment2": "Use single quotes instead of double quotes ('hello' vs \"hello\")",
+  
+  "trailingComma": "es5",
+  "Comment3": "Add trailing commas where valid in ES5 (objects, arrays, etc.) - prevents git diff noise",
+  
+  "tabWidth": 2,
+  "Comment4": "Indent with 2 spaces (standard in JavaScript/TypeScript community)",
+  
+  "useTabs": false,
+  "Comment5": "Use spaces instead of tabs (more consistent across editors)",
+  
+  "printWidth": 100,
+  "Comment6": "Wrap lines that exceed 100 characters (balance between readability and screen width)",
+  
+  "arrowParens": "always",
+  "Comment7": "Always include parentheses around arrow function parameters: (x) => x vs x => x",
+  
+  "bracketSpacing": true,
+  "Comment8": "Add spaces inside object braces: { foo: bar } vs {foo: bar}",
+  
+  "endOfLine": "auto",
+  "Comment9": "Handle line endings automatically (Windows CRLF vs Unix LF)",
+  
+  "quoteProps": "as-needed",
+  "Comment10": "Only add quotes around object keys when necessary: { foo: 1 } vs { 'foo-bar': 1 }",
+  
+  "jsxSingleQuote": false,
+  "Comment11": "Use double quotes in JSX (React standard)",
+  
+  "bracketSameLine": false,
+  "Comment12": "Put > of multi-line JSX elements on new line"
+}
+
+

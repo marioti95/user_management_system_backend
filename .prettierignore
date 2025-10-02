@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+coverage
+
+# Logs
+logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Prisma generated files
+prisma/generated
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Uploads folder (user-uploaded files shouldn't be formatted)
+uploads
+
+# Documentation that shouldn't be auto-formatted
+CHANGELOG.md
+
+
